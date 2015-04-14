@@ -122,26 +122,17 @@ function ytvideobg_block_info() {
 /**
  * Implements hook_block_view().
  */
-function ytvideobg_block_view($delta='') {
-  $block = array();
-  
-  switch($delta) {
-    case 'youtube_block' :
-      $block['content'] = my_block_view();
-      break;
-  }
-  
-  return $block;
+function ytvideobg_block_view($delta = '') {
+	if ($delta == 'youtube_block'){
+		$block = array();
+		$block['subject'] = '';
+		$block['content'] = array(
+			'#theme' => 'html_tag',		
+			'#tag' => 'div',		
+		);
+		return $block;
+	}
+	
+	return $block;
 }
 
-/**
- * Custom function to assemble renderable array for block content.
- * Returns a renderable array with the block content.
- * @return
- *   returns a renderable array of block content.
- */
-function my_block_view() {
-	
-	
-	return $output;
-}
