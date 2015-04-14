@@ -26,8 +26,6 @@ function ytvideobg_permission() {
 }
 /**
  * Implements hook_menu().
- */
-function ytvideobg_menu() {
   $items = array();
 
   // Admin configuration group.
@@ -38,42 +36,10 @@ function ytvideobg_menu() {
   );
 
   // Admin configuration - Settings.
-  $items['admin/config/ytvideobg/manage'] = array(
     'title' => 'YouTube Background settings',
-    'description' => 'Manage YouTube Background settings and configurations.',
     'access arguments' => array('administer youtube background'),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('ytvideobg_admin_settings_form'),
   );
 
   return $items;
-}
-/**
- * Implements hook_form().
- */
-function windfarms_admin_settings_form($node, &$form_state) {
-  $form = array();
-
-  $form['overview'] = array(
-    '#markup' => t('This interface allows administrators to manage general YouTube Video Background Settings'),
-    '#prefix' => '<p>',
-    '#suffix' => '</p>',
-  );
-
-
-  $form['ytvideobg_default_video_url'] = array(
-    '#title' => t('Video URL'),
-    '#description' => t('Full video URL'),
-    '#type' => 'textfield',
-    '#default_value' => variable_get('ytvideobg_default_video_url', 'https://www.youtube.com/watch?v=_nCaWJ2j-0M'),
-    '#required' => TRUE,
-  );
-
-
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Save'),
-  );
-
-  return $form;
 }
