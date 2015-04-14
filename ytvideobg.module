@@ -24,3 +24,22 @@ function ytvideobg_permission() {
     ),
   );
 }
+/**
+ * Implements hook_menu().
+  $items = array();
+
+  // Admin configuration group.
+  $items['admin/config/ytvideobg'] = array(
+    'title' => 'YouTube Background',
+    'description' => 'Administer YouTube Background',
+    'access arguments' => array('administer youtube background'),
+  );
+
+  // Admin configuration - Settings.
+    'title' => 'YouTube Background settings',
+    'access arguments' => array('administer youtube background'),
+    'page callback' => 'drupal_get_form',
+  );
+
+  return $items;
+}
