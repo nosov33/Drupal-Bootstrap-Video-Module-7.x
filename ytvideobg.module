@@ -63,7 +63,7 @@ function ytvideobg_admin_settings_form($node, &$form_state) {
 
   $form['ytvideobg_default_video_url'] = array(
     '#title' => t('Video URL'),
-    '#description' => t('Full video URL'),
+    '#description' => t('Full video URL. IMPORTANT: without "http://".'),
     '#type' => 'textfield',
     '#default_value' => variable_get('ytvideobg_default_video_url', 'https://www.youtube.com/watch?v=_nCaWJ2j-0M'),
     '#required' => TRUE,
@@ -76,4 +76,18 @@ function ytvideobg_admin_settings_form($node, &$form_state) {
   );
 
   return $form;
+}
+
+/**
+ * Process a validated admin setting submission.
+ */
+function ytvideobg_admin_settings_form_submit($form, &$form_state) {
+  // Rebuild the form.
+  $form_state['rebuild'] = TRUE;
+
+  // Save Wind Farm setting variables.
+  variable_set('ytvideobg_default_video_url', $form_state['values']['ytvideobg_default_video_url']);
+
+  // Notify user.
+  drupal_set_message(t('Mega prega settings saved.'));
 }
