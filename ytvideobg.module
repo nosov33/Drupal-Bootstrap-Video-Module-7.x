@@ -110,28 +110,4 @@ function ytvideobg_admin_settings_form_submit($form, &$form_state) {
   drupal_set_message(t('Your Video Background settings has been saved.'));
 }
 
-/**
- * Creation Block
- */
- function ytvideobg_block_info(){
- 	$blocks = array();
- 	$blocks['video_block'] = array(
-		'info' = t('Video Block'),
-	);
-	return $blocks;
- }
- function ytvideobg_block_view($delta = ''){
- 	$block = array();
-	switch($delta){
-		case 'video_block':
-		$block['subject'] = '';
-		$block['content'] = _ytvideobg_block_content();
-			break;	
-	}
-	
-	return $block;
- }
- function _ytvideobg_block_content(){
- 	$output = t('Hi!');
-	return $output;
- }
+
