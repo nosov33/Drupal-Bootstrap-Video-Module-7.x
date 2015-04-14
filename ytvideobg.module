@@ -141,10 +141,7 @@ function ytvideobg_block_view($delta='') {
  *   returns a renderable array of block content.
  */
 function my_block_view() {
-	$output1 = '<section class="content-section video-section"><div class="pattern-overlay"><a id="bgndVideo" class="player" data-property="{videoURL:';
-	$output2 = t('Hi!');
-	$output = $output1 . $output2;
+	
+	
 	return $output;
 }
-
-  
