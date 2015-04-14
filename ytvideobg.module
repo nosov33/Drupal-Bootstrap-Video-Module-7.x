@@ -1,1 +1,15 @@
 <?php
+/**
+* Implements hook_help() to the module.
+* 
+*/
+function ytvideobg_help($path, $arg){
+	switch ($path){
+		case 'admin/help#video_blog':{
+			$ret_val = '<h3>' . t('About YouTube Video Background') . '</h3>';
+			$ret_val = '<p>' . t('Here is discription of the Module which You can Translate') . '</p>';
+			return $ret_val;
+			break;
+		}
+	}
+}
