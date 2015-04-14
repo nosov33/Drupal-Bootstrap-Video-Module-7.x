@@ -103,6 +103,8 @@ function ytvideobg_admin_settings_form_submit($form, &$form_state) {
 
   // Save Wind Farm setting variables.
   variable_set('ytvideobg_default_video_url', $form_state['values']['ytvideobg_default_video_url']);
+  variable_set('ytvideobg_default_description_text', $form_state['values']['ytvideobg_default_description_text']);
+  variable_set('ytvideobg_default_title_text', $form_state['values']['ytvideobg_default_title_text']);
 
   // Notify user.
   drupal_set_message(t('Your Video Background settings has been saved.'));
