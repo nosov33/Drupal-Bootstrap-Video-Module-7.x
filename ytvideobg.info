@@ -1,0 +1,3 @@
+name = Youtube Background
+description = Module to insert block with YouTube video background to any pace in your Drupal site. 
+core = 7.x
