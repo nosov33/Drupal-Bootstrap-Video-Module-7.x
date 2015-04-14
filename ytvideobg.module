@@ -65,7 +65,7 @@ function ytvideobg_admin_settings_form($node, &$form_state) {
     '#title' => t('Video URL'),
     '#description' => t('Full video URL. IMPORTANT: without "http://".'),
     '#type' => 'textfield',
-    '#default_value' => variable_get('ytvideobg_default_video_url', 'https://www.youtube.com/watch?v=_nCaWJ2j-0M'),
+    '#default_value' => variable_get('ytvideobg_default_video_url', 'www.youtube.com/watch?v=_nCaWJ2j-0M'),
     '#required' => TRUE,
   );
 
