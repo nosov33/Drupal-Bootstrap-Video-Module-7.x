@@ -119,4 +119,32 @@ function ytvideobg_block_info() {
   );
   return $blocks;
 }
+/**
+ * Implements hook_block_view().
+ */
+function ytvideobg_block_view($delta='') {
+  $block = array();
+  
+  switch($delta) {
+    case 'youtube_block' :
+      $block['content'] = my_block_view();
+      break;
+  }
+  
+  return $block;
+}
 
+/**
+ * Custom function to assemble renderable array for block content.
+ * Returns a renderable array with the block content.
+ * @return
+ *   returns a renderable array of block content.
+ */
+function my_block_view() {
+	$output1 = '<section class="content-section video-section"><div class="pattern-overlay"><a id="bgndVideo" class="player" data-property="{videoURL:';
+	$output2 = t('Hi!');
+	$output = $output1 . $output2;
+	return $output;
+}
+
+  
