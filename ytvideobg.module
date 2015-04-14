@@ -109,5 +109,14 @@ function ytvideobg_admin_settings_form_submit($form, &$form_state) {
   // Notify user.
   drupal_set_message(t('Your Video Background settings has been saved.'));
 }
-
+/**
+ * Implements hook_block_info().
+ */
+function ytvideobg_block_info() {
+  $blocks = array();
+  $blocks['youtube_block'] = array(
+    'info' => t('YouTube Video Block'),
+  );
+  return $blocks;
+}
 
