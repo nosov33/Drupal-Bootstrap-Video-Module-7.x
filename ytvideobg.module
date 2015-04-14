@@ -13,3 +13,14 @@ function ytvideobg_help($path, $arg){
 		}
 	}
 }
+/**
+ * Implements hook_permission().
+ */
+function ytvideobg_permission() {
+  return array(
+    'administer YouTube Video Background' => array(
+      'title' => t('Administer YouTube Video Background'),
+      'description' => t('Perform administrative tasks on Youtube Video Background functionality'),
+    ),
+  );
+}
