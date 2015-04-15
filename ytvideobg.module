@@ -128,9 +128,9 @@ function ytvideobg_block_view($delta = '') {
 		$block['subject'] = '';
 		$block['content'] = array(
 			'#theme' => 'youtube',		
-			'#videoURL' => 'site.ru',
-			'#title1' => t('Title 1'),
-			'#title2' => t('Title 2'),
+			'#videoURL' => variable_get('ytvideobg_default_video_url'),
+			'#title1' => variable_get('ytvideobg_default_title_text'),
+			'#title2' => variable_get('ytvideobg_default_description_text'),
 		);
 		return $block;
 	}
