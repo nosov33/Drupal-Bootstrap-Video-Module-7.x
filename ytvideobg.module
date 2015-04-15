@@ -127,16 +127,8 @@ function ytvideobg_block_view($delta = '') {
 		$block = array();
 		$block['subject'] = '';
 		$block['content'] = array(
-			'#theme' => 'html_tag',		
-			'#tag' => 'div',		
-			'#attributes' => array(
-				'class' => 'pattern-overlay',
-			),		
-			
-			
-			'css' => array(
-				drupal_get_path('module', 'ytvideobg') . 'css/ytvideobg.css',
-			),
+			'#theme' => 'youtube',		
+			'#videoURL'
 		);
 		return $block;
 	}
