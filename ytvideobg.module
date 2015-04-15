@@ -128,11 +128,20 @@ function ytvideobg_block_view($delta = '') {
 		$block['subject'] = '';
 		$block['content'] = array(
 			'#theme' => 'youtube',		
-			'#videoURL'
+			'#videoURL' => 'site.ru',
+			'#title1' => t('Title 1'),
+			'#title2' => t('Title 2'),
 		);
 		return $block;
 	}
 	
 	return $block;
 }
-
+function ytvideobg_theme(){
+ return array(
+    'youtube' => array(
+      'variables' => array('videoURL' => NULL, 'title1' => NULL, 'title2' => NULL),
+      'template' => 'youtube',
+    ),
+ );
+}
