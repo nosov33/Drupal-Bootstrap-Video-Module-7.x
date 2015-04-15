@@ -4,3 +4,4 @@ package = Multimedia
 core = 7.x
 version = 7.x-0.1-dev
 scripts[] = js/jquery.mb.YTPlayer.js
+stylesheets[all][] = css/ytvideobg.css
